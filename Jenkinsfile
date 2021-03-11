@@ -1,15 +1,13 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:12-alpine'
+        }
+    }
+    environment { HOME = '.' }
     stages {
         stage('Build-Backend') {
-            agent {
-                docker {
-                    image 'node:12-alpine'
-                }
-            }
-            environment {
-                HOME = '.'
-            }
+            
             steps {
                 dir('app'){
                     echo "${WORKSPACE}"
