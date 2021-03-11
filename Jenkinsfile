@@ -1,10 +1,11 @@
 pipeline {
     agent any
-
     stages {
         stage('Build-Backend') {
-            docker {
-                image 'node:12-alpine'
+            agent {
+                docker {
+                    image 'node:12-alpine'
+                }
             }
             steps {
                 dir('app'){
