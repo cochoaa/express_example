@@ -1,2 +1,5 @@
+pwd
+echo "Me muevo a app"
 cd app
-ls
+pwd
+ls -l
