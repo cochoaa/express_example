@@ -5,7 +5,7 @@ var router = express.Router();
 
 // Home page route.
 router.get('/', function (req, res) {
-    const PORT=parseInt(process.argv[2], 10);
+    const PORT=process.env.PORT;
     const PID=process.pid;
     let response=`<h1>Aplicacion de Prueba Wiki ejecutando </h1>`;
     response+=`<h2>Puerto: ${PORT} </h2> `;
