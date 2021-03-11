@@ -12,20 +12,16 @@ pipeline {
             }
             steps {
                 dir('app'){
-                    sh "pwd"
                     echo "Estoy en App"
-                    sh 'node --version'
-                    sh 'npm --version'
                     sh 'npm install'
+                    sh 'ls -l'
                 }
             }
         }
         
         stage('Deploy') {
             steps {
-                dir('DESARROLLO/CODIGO_FUENTE/mesa-de-partes'){
-                    sh './deploy.sh'
-                }
+                sh './deploy.sh'
             }
         }
     }
