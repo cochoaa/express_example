@@ -7,6 +7,9 @@ pipeline {
                     image 'node:12-alpine'
                 }
             }
+            environment {
+                HOME = '.'
+            }
             steps {
                 dir('app'){
                     sh "pwd"
