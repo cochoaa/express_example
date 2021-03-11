@@ -12,6 +12,7 @@ pipeline {
             }
             steps {
                 dir('app'){
+                    echo "${WORKSPACE}"
                     echo "Estoy en App"
                     sh 'npm install'
                     sh 'ls -l'
